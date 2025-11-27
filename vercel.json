@@ -2,14 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "dance.py",
-      "use": "@vercel/python"
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.9",
+        "installCommand": "pip install -r requirements.txt"
+      }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dance.py"
+      "dest": "api/index.py"
     }
   ]
 }
