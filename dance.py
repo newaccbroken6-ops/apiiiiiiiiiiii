@@ -452,7 +452,7 @@ async def perform_emote(team_code: str, uids: list, emote_id: int):
         for uid_str in uids:
             if uid_str:  
                 uid = int(uid_str)
-                H = await Emote_k(uid, emote_id, key, iv, region)
+                H = await Emote_k(uid, emote_id, key, iv,region)
                 await SEndPacKeT(None, online_writer, 'OnLine', H)
                 await asyncio.sleep(0.2)  # Reduced from 0.5 seconds
                 
